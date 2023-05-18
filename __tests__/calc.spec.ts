@@ -1,6 +1,6 @@
-import { calc, add } from '../src'
+import { validatorName, validatorUpperName } from '../src/index'
 
 test('The calculation result should be 996.', () => {
-  expect(calc(1024, 28)).toBe(996)
-  expect(add(12, 5)).toBe(17)
+  expect(validatorName('测试')).toBe(true)
+  expect(validatorUpperName('xsdsf')).toBe(false)
 })
