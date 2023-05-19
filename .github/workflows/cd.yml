@@ -10,11 +10,13 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: 18
       # https://github.com/semantic-release/git/issues/209
       - run: npm ci --ignore-scripts
       - run: npm run build

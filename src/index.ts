@@ -1,4 +1,10 @@
-const calc = (a: number, b: number): number => {
-  return a - b
-}
-export default calc
+/**
+ * =========================注入===============================
+ */
+// import { validatorName, validatorUpperName } from './utils/utils.module'
+
+/**
+ * ==========================导出====================================
+ */
+
+export { validatorName, validatorUpperName } from './utils/utils.module'
