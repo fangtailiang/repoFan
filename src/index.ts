@@ -1,10 +1,10 @@
 /**
  * =========================注入===============================
  */
-// import { validatorName, validatorUpperName } from './utils/utils.module'
+// import { validatorFun, RegExps } from './utils/utils.module'
 
 /**
  * ==========================导出====================================
  */
 
-export { validatorName, validatorUpperName } from './utils/utils.module'
+export { Validators, RegExps, AesUtil } from './utils/utils.module'
