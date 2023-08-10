@@ -148,46 +148,7 @@ export const isObjectValueEqual = (a: any, b: any): any => {
   })
   return result
 }
-/**
- * 根据字典的value显示label
- */
-//  export const findByvalue = (dic, value) => {
-//    let result = ''
-//    if (validatorNull(dic)) return value
-//    if (typeof (value) === 'string' || typeof (value) === 'number' || typeof (value) === 'boolean') {
-//      let index = 0
-//      index = findArray(dic, value)
-//      if (index !== -1) {
-//        result = dic[index].label
-//      } else {
-//        result = value
-//      }
-//    } else if (value instanceof Array) {
-//      result = []
-//      let index = 0
-//      value.forEach(ele => {
-//        index = findArray(dic, ele)
-//        if (index !== -1) {
-//          result.push(dic[index].label)
-//        } else {
-//          result.push(value)
-//        }
-//      })
-//      result = result.toString()
-//    }
-//    return result
-//  }
-//  /**
-//   * 根据字典的value查找对应的index
-//   */
-//  export const findArray = (dic, value) => {
-//    for (let i = 0; i < dic.length; i++) {
-//      if (dic[i].value === value) {
-//        return i
-//      }
-//    }
-//    return -1
-//  }
+
 /**
  * 生成随机len位数字
  */
@@ -200,42 +161,6 @@ export const randomLenNum = (len: number = 4, date: true): string => {
   return random
 }
 
-//  /**
-//   */
-//  export const handleStreamFile = (url : string, type : string,) :void {
-//    return validatorNull(url) ? null : request({
-//      url:  url,
-//      method: 'get',
-//      responseType: 'blob'
-//    }).then((response) => { // 处理返回的文件流
-//      const blob = response.data
-//      const img = document.getElementById(id)
-//      img.src = URL.createObjectURL(blob)
-//      window.setTimeout(function() {
-//        window.URL.revokeObjectURL(blob)
-//      }, 0)
-//    })
-//  }
-
-//  export function handleDown(filename, bucket) {
-//    return request({
-//      url: '/admin/sys-file/' + bucket + '/' + filename,
-//      method: 'get',
-//      responseType: 'blob'
-//    }).then((response) => { // 处理返回的文件流
-//      const blob = response.data
-//      const link = document.createElement('a')
-//      link.href = URL.createObjectURL(blob)
-//      link.download = filename
-//      document.body.appendChild(link)
-//      link.click()
-//      window.setTimeout(function() {
-//        URL.revokeObjectURL(blob)
-//        document.body.removeChild(link)
-//      }, 0)
-//    })
-//  }
-
 export const getQueryString = (url: string, paraName: string): any => {
   const arrObj = url.split('?')
   if (arrObj.length > 1) {
@@ -243,8 +168,8 @@ export const getQueryString = (url: string, paraName: string): any => {
     let arr
     for (let i = 0; i < arrPara.length; i++) {
       arr = arrPara[i].split('=')
-      // eslint-disable-next-line eqeqeq
-      if (arr != null && arr[0] == paraName) {
+
+      if (arr != null && arr[0] === paraName) {
         return arr[1]
       }
     }
@@ -286,21 +211,4 @@ export const getSearchString = (name: string): any => {
   const r = window.location.search.substr(1).match(reg)
   if (r != null) return unescape(r[2])
   return null
-}
-export const handleLocalSearch = (): void => {
-  if (location.search !== '') {
-    if (location.search.includes('_ts=')) {
-      const oldTs = getSearchString('_ts')
-      if (new Date().getTime() - Number(oldTs) > 12 * 60 * 60 * 1000) {
-        location.search = location.search.replace(
-          '_ts=' + String(),
-          '_ts=' + String(new Date().getTime())
-        )
-      }
-    } else {
-      location.search += '&_ts=' + String(new Date().getTime())
-    }
-  } else {
-    location.search = '?_ts=' + String(new Date().getTime())
-  }
 }
