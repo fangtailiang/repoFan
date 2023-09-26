@@ -212,3 +212,16 @@ export const getSearchString = (name: string): any => {
   if (r != null) return unescape(r[2])
   return null
 }
+
+// 检查浏览器型号和版本
+export const useBrowser = (): any => {
+  const ua: string = navigator.userAgent.toLowerCase()
+  const re: RegExp = /(msie|firefox|chrome|opera|version).*?([\d.]+)/
+  const m: any = ua.match(re)
+  const Sys = {
+    browser: m[1].replace(/version/, "'safari"),
+    version: m[2]
+  }
+
+  return Sys
+}
