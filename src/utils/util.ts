@@ -185,7 +185,7 @@ export const getQueryString = (url: string, paraName: string): any => {
  * @returns {string}
  */
 export function toThousands(s: string, n: number): any {
-  n = (n > 0 && n <= 20) ? n : 2
+  n = n > 0 && n <= 20 ? n : 2
   let prefix = ''
   if ((s + '').includes('-')) {
     prefix = '-'
