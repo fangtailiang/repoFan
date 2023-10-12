@@ -1,0 +1,14 @@
+export const chineseUnderline = /^[\u4E00-\u9FA5A-Za-z0-9_]+$/;
+export const englishUnderline = /^[A-Z_]+$/;
+export const caporLowEnglish = /^[0-9a-zA-Z_]{1,}$/;
+export const positvNumber = /^[1-9][0-9]{0,}$/;
+export const phone = /^1[0-9]{10}$/;
+export const website = /^http[s]?:\/\/.*/;
+export const email = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+export const minuscule = /^[a-z]+$/;
+export const integer = /[^\d]/g;
+export const space = /[^\s]+$/;
+export const decimals = /^0\.([1-9]|\d[1-9])$|^[1-9]\d{0,8}\.\d{0,2}$|^[1-9]\d{0,8}$/;
+export const password = /^[a-zA-Z]\w{5,17}$/;
+export const dateString = /^\d{4}-\d{1,2}-\d{1,2}/;
+//# sourceMappingURL=regExps.js.map

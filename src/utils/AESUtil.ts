@@ -2,7 +2,7 @@ import * as CryptoJS from 'crypto-js'
 
 /**
  * 解密 指定key
- * @DateTime 2023-03-09
+ * @DateTime
  */
 export const decryption = (strs: any, aesKey: string): any => {
   // 返回的是一个解密后的对象
@@ -27,7 +27,7 @@ export const decryption = (strs: any, aesKey: string): any => {
 
 /**
  * 加密处理
- * @DateTime 2023-03-09
+ * @DateTime
  */
 export const encryption = (data: any, aesKey: string): any => {
   const resultData = JSON.stringify(data)

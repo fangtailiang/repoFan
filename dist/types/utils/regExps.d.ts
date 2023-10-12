@@ -1,0 +1,13 @@
+export declare const chineseUnderline: RegExp;
+export declare const englishUnderline: RegExp;
+export declare const caporLowEnglish: RegExp;
+export declare const positvNumber: RegExp;
+export declare const phone: RegExp;
+export declare const website: RegExp;
+export declare const email: RegExp;
+export declare const minuscule: RegExp;
+export declare const integer: RegExp;
+export declare const space: RegExp;
+export declare const decimals: RegExp;
+export declare const password: RegExp;
+export declare const dateString: RegExp;

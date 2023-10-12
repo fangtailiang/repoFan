@@ -1,0 +1,16 @@
+export declare const serialize: (data: any) => string;
+export declare const getObjType: (obj: any[] | Record<string, unknown> | string | number | null | undefined | boolean | any) => string;
+export declare const deepClone: (data: any) => any;
+export declare const diff: (obj1: any, obj2: any) => boolean;
+export declare const setTheme: (name: string) => void;
+export declare const findParent: (menu: any, id: string | number) => any;
+export declare const loadStyle: (url: string) => void;
+export declare const isObjectValueEqual: (a: any, b: any) => any;
+export declare const randomLenNum: (len: number | undefined, date: true) => string;
+export declare const getQueryString: (url: string, paraName: string) => any;
+export declare function toThousands(s: string, n: number): any;
+export declare const getSearchString: (name: string) => any;
+export declare const useBrowser: () => any;
+export declare const getCookies: () => {};
+export declare const clearCookies: () => void;
+export declare const getUrlParams: (query: any) => {};
