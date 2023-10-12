@@ -1,11 +1,10 @@
 import * as CryptoJS from 'crypto-js'
 
-const aesKey: string = 'be671bcc48dcd91c'
 /**
  * 解密 指定key
- * @DateTime 2023-03-09
+ * @DateTime
  */
-export const decryption = (strs: any): any => {
+export const decryption = (strs: any, aesKey: string): any => {
   // 返回的是一个解密后的对象
   const decrypted = CryptoJS.AES.decrypt(
     strs,
@@ -28,9 +27,9 @@ export const decryption = (strs: any): any => {
 
 /**
  * 加密处理
- * @DateTime 2023-03-09
+ * @DateTime
  */
-export const encryption = (data: any): any => {
+export const encryption = (data: any, aesKey: string): any => {
   const resultData = JSON.stringify(data)
   const result = {
     encData: ''
